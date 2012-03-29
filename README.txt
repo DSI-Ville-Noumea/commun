@@ -1,0 +1,1 @@
+mvn install:install-file -DgroupId=nc.mairie  -DartifactId=commun  -Dversion=1.0  -Dfile=./target/commun-1.0.jar  -Dpackaging=jar -DgeneratePom=true
