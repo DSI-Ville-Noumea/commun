@@ -1,12 +1,14 @@
 package nc.mairie.commun.technique;
 
+import java.util.Hashtable;
+
 
 public class ListeMairieMessages {
-	private static java.util.Hashtable listeMessages;
+	private static Hashtable<String, String> listeMessages;
 
-public static java.util.Hashtable getListeMessages() {
+public static Hashtable<String,String> getListeMessages() {
 	if (listeMessages == null) {
-		listeMessages = new java.util.Hashtable();
+		listeMessages = new Hashtable<String,String>();
 
 		//Messages d'erreur
 		listeMessages.put("ERR001","Vous devez saisir le nom de l'agent");
