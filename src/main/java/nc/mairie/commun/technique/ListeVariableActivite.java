@@ -14,20 +14,20 @@ public interface ListeVariableActivite {
 	public static final String ACTIVITE_COMMUNE_POSTAL = "Commune Postal";
 	//Voie
 	public static final String ACTIVITE_VOIE_QUARTIER = "Voie Quartier";
-	//Critère recherche
-	public static final String ACTIVITE_CRITERE = "Critère";
-	//Critère recherche commune
-	public static final String ACTIVITE_CRITERE_DOMTOM = "Critère DOM/TOM";
-	//Critère recherche commune
-	public static final String ACTIVITE_CRITERE_NC = "Critère NC";
-	//Critère recherche commune
-	public static final String ACTIVITE_CRITERE_NC_AUTRE_NOUMEA = "Critère NC autre Noumea";
-	//Critère ACTIF
-	public static final String ACTIVITE_CRITERE_ACTIF = "Critère actif";
-	//Critère INACTIF
-	public static final String ACTIVITE_CRITERE_INACTIF = "Critère inactif";
-	//Critère TOUS
-	public static final String ACTIVITE_CRITERE_TOUS = "Critère tous";
+	//CritÃ¨re recherche
+	public static final String ACTIVITE_CRITERE = "CritÃ¨re";
+	//CritÃ¨re recherche commune
+	public static final String ACTIVITE_CRITERE_DOMTOM = "CritÃ¨re DOM/TOM";
+	//CritÃ¨re recherche commune
+	public static final String ACTIVITE_CRITERE_NC = "CritÃ¨re NC";
+	//CritÃ¨re recherche commune
+	public static final String ACTIVITE_CRITERE_NC_AUTRE_NOUMEA = "CritÃ¨re NC autre Noumea";
+	//CritÃ¨re ACTIF
+	public static final String ACTIVITE_CRITERE_ACTIF = "CritÃ¨re actif";
+	//CritÃ¨re INACTIF
+	public static final String ACTIVITE_CRITERE_INACTIF = "CritÃ¨re inactif";
+	//CritÃ¨re TOUS
+	public static final String ACTIVITE_CRITERE_TOUS = "CritÃ¨re tous";
 
 	//Agent de la mairie
 	public static final String ACTIVITE_AGENT_MAIRIE = "Agent de la Mairie";
@@ -36,7 +36,7 @@ public interface ListeVariableActivite {
 	//GRADE
 	public static final String ACTIVITE_GRADE = "Grade";
 	//INDICE_REMUNERATION
-	public static final String ACTIVITE_INDICE_REMUNERATION = "Indice rémunèration";
+	public static final String ACTIVITE_INDICE_REMUNERATION = "Indice rÃ©munÃ¨ration";
 	//SERVICE_AGENT
 	public static final String ACTIVITE_SERVICE_AGENT = "Servide de l'agent";
 }
