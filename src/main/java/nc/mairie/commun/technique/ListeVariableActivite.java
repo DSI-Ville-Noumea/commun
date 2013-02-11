@@ -15,19 +15,19 @@ public interface ListeVariableActivite {
 	//Voie
 	public static final String ACTIVITE_VOIE_QUARTIER = "Voie Quartier";
 	//CritÃ¨re recherche
-	public static final String ACTIVITE_CRITERE = "CritÃ¨re";
+	public static final String ACTIVITE_CRITERE = "Critère";
 	//CritÃ¨re recherche commune
-	public static final String ACTIVITE_CRITERE_DOMTOM = "CritÃ¨re DOM/TOM";
+	public static final String ACTIVITE_CRITERE_DOMTOM = "Critère DOM/TOM";
 	//CritÃ¨re recherche commune
-	public static final String ACTIVITE_CRITERE_NC = "CritÃ¨re NC";
+	public static final String ACTIVITE_CRITERE_NC = "Critère NC";
 	//CritÃ¨re recherche commune
-	public static final String ACTIVITE_CRITERE_NC_AUTRE_NOUMEA = "CritÃ¨re NC autre Noumea";
+	public static final String ACTIVITE_CRITERE_NC_AUTRE_NOUMEA = "Critère NC autre Noumea";
 	//CritÃ¨re ACTIF
-	public static final String ACTIVITE_CRITERE_ACTIF = "CritÃ¨re actif";
+	public static final String ACTIVITE_CRITERE_ACTIF = "Critère actif";
 	//CritÃ¨re INACTIF
-	public static final String ACTIVITE_CRITERE_INACTIF = "CritÃ¨re inactif";
+	public static final String ACTIVITE_CRITERE_INACTIF = "Critère inactif";
 	//CritÃ¨re TOUS
-	public static final String ACTIVITE_CRITERE_TOUS = "CritÃ¨re tous";
+	public static final String ACTIVITE_CRITERE_TOUS = "Critère tous";
 
 	//Agent de la mairie
 	public static final String ACTIVITE_AGENT_MAIRIE = "Agent de la Mairie";
@@ -36,7 +36,7 @@ public interface ListeVariableActivite {
 	//GRADE
 	public static final String ACTIVITE_GRADE = "Grade";
 	//INDICE_REMUNERATION
-	public static final String ACTIVITE_INDICE_REMUNERATION = "Indice rÃ©munÃ¨ration";
+	public static final String ACTIVITE_INDICE_REMUNERATION = "Indice rémunération";
 	//SERVICE_AGENT
 	public static final String ACTIVITE_SERVICE_AGENT = "Servide de l'agent";
 }
