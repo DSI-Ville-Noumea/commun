@@ -4,13 +4,19 @@ jdk:
 cache:
   directories:
   - $HOME/.m2
+env:
+  global:
+  - secure: w5PEm5w8XAMN5+MsNdzFt5vSMz+/hCxgujvmz2S6wvU6SOW4TX2XTBQnY/7oLv7kz3thjjKrZb3K3sk/wV9QDktwy6sk/fSoGE/htsQKHJM9SSJJz51vUyk2ApuWV+Ukbex3ZYKNaOPX5hRs33oMaZuP9FxHy0H0cVPcmac81Ee55w3hVaMMC8OXpYFqDc8qyVvWLMy8fW++uXEFVPkDnVe9LU4FPbLaT4Z3XtmweXTWSz8SMwEK5bFyqDHZhsXGP2eB+XRwHIIPJfMaw5AvLbNR3od40ynVbeGlIF/uNGpQXORPlknt7V/C0IxVIDdNZnbsbjNiKIcVqG+A/rLBqS5Ea6q5xEqdbnJeELdxNm7jDW5mtGcafnqMls1Jb+hSkF+56G7FM+Eltth6oybAtk+ArNki7WSMNeMpkflMmqPeMEOBSYCdcVfnelqONn//D4vE4WQzG4fg+2QI6nx7SxrZmtDEi0z9ubMC+Uuu8gEljp7RKddYJ4mHDRaAQfUYUrH2yt88EXHRqsGEUgQfCpfFYk3a+l/9+lVtpZyo3wbS42mTzS7FCLxb0NWTnrqHh7w+W/z85Jy61FGLOgDbK5H7hqJYVjE4liZWfPA04aeuBbEqC7Yb3r8Of7w8c/5jdj+rW0T7DyIV40i98oHe90iyXjYe87qBV7zE012xFvE=
+  - secure: zwalQWMMTsAGFH7wvhTSahKGaErPKvwMayYzupqHr6ExRT8PJ0Jdp8w8T+DLsrjuA4WJ9Pv5wNrCGT+2T58YkoCA3++QoxWx3MHRS7KaoGg/GBbX3zRtMrw+Y3Em9nDGpL1iScWkHUBuRWHvgSiHGZPw2/97/uEUpj+JNaQtVTlRH4Cs0uLGazeFd8sO5fR0hTiqAXNpPPoGdG1OhuhbWU1FA6hvBh9XENQEPvqPk0cYwQ/NMPIJ4RlMB7u54v8M8CKpKRidvIOlPflfeCU8WcQqOuZzwaukkFvwpS8yg6NwYKeVgQkgiBldhmlPucE2lfEoQ31QrGukfeLi+P3dutrqR22ka7KOATrqIozKF/9GjUI9ba5f6tNkP0gHXL75gtbiQwTZxJdHBB54VPPX881pb4jvUVuyiz3GhywoxLucuA2+J+OENusAord179nZl5s9gUY4OKFqPrik777e5kBkMiAYNu7whnBXv1nFSPotrBgLbwejGQvPLHic2cGqwEyWooXtetdJWRBuPknvQ7JaiHkq2yDGqpji1/u0YoGeDQNpi+uvhpdlCREimaa4BfvzXos5wFBVQZAlOFgZfgX3Es13Sca+9axYt24v/EC3YbkpD+37e9WiixP5TKmlHmeppGyfEdQ0GwFfqORrYv9Jy4Ou8+OskyD2gQUz/ic=
 before_install:
 - export TZ=Pacific/Noumea
-install: mvn clean install checksum:files -Dmaven.javadoc.skip=true -B -V
+install: mvn clean install checksum:files -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+- mvn versioneye:update test jacoco:report
 notifications:
   slack:
-    rooms :
-       secure: QuiPmbVTN9Mt6Na/DjMA/3XDoJZ0uf3Cn4nx0xvmHdPDEbHD5/Y76aFKmjuNcFIDER/ng2CsvClYbZcDQy2DxEzBFs+FR4ZJ8Rvn8MNOBmLXifOq42vPNv1x3KuRWTDpOVcY+AHwZI+YXLO/4Cwgz3qTo+q2bj46/s2FcG1LJTCRarXWR8fi0TKeD1Twi8d/tMJOBrHCynqVsxy9DvQ2nWDaYYrFxp4bvyLf+2S3IK94K5wHDx8Su6zvF7rTHQ9USn3GFUc66hrLPgGSC9h1JdEZjWyya4edohr1rmg6r7MLJOQjNSLFgaA/QVWuGWMUB1biX0IFq17Qyhdf65cEtut6+Mbm+9LJCIwmjI3lDoJdsSqMWuyFFxyvyeOagnYvjCp78OfPW/qvck8Su1AaXqFjMmFTS95N1d9z2YLtL4xkZ9KEPpLaf3v4g38gjccp5ZIhphgSErPXY8WQ3AvKU0zp5pG3FsVKHqhZB1WnPEbqkenlnk6tebmJKYb8qa8AGz26wbcJDRkdL18ORf7wjeloIe0L9Df876Z3QAjTzdHyj6dVSFqP9U2snmN1dgBfAzIG55AzhbyKRj0LS9BQuyfiNZGXP5h9B4V+aBKWmtrot+/nz2UcKB+JazUs8tdU05zBhohN+eMQEsgTg5KwKtj4ujJ9uWWl+tk5W27RBRQ=
+    rooms:
+      secure: QuiPmbVTN9Mt6Na/DjMA/3XDoJZ0uf3Cn4nx0xvmHdPDEbHD5/Y76aFKmjuNcFIDER/ng2CsvClYbZcDQy2DxEzBFs+FR4ZJ8Rvn8MNOBmLXifOq42vPNv1x3KuRWTDpOVcY+AHwZI+YXLO/4Cwgz3qTo+q2bj46/s2FcG1LJTCRarXWR8fi0TKeD1Twi8d/tMJOBrHCynqVsxy9DvQ2nWDaYYrFxp4bvyLf+2S3IK94K5wHDx8Su6zvF7rTHQ9USn3GFUc66hrLPgGSC9h1JdEZjWyya4edohr1rmg6r7MLJOQjNSLFgaA/QVWuGWMUB1biX0IFq17Qyhdf65cEtut6+Mbm+9LJCIwmjI3lDoJdsSqMWuyFFxyvyeOagnYvjCp78OfPW/qvck8Su1AaXqFjMmFTS95N1d9z2YLtL4xkZ9KEPpLaf3v4g38gjccp5ZIhphgSErPXY8WQ3AvKU0zp5pG3FsVKHqhZB1WnPEbqkenlnk6tebmJKYb8qa8AGz26wbcJDRkdL18ORf7wjeloIe0L9Df876Z3QAjTzdHyj6dVSFqP9U2snmN1dgBfAzIG55AzhbyKRj0LS9BQuyfiNZGXP5h9B4V+aBKWmtrot+/nz2UcKB+JazUs8tdU05zBhohN+eMQEsgTg5KwKtj4ujJ9uWWl+tk5W27RBRQ=
 before_deploy:
 - export RELEASE_PKG_FILE=$(ls target/*.jar)
 - export RELEASE_PKG_MD5_FILE=$(ls target/*.jar.md5)
@@ -22,11 +28,9 @@ deploy:
   api_key:
     secure: iMmHeoaltk4vkyyE1SWR/LbkHXDF8Xg5e/aJFldb0cJ4K5ivui1Wmzyu82DaDgeR1pkmftRtrGvI4Tcufyo9W00WwH/y6BbUeIEELZzR/tCypE5P/GKRO6/UGbi6lq0Pj/oG8f9GNVFhW+jDr/8jsr1ifErEF9ygWiyD6fwOv0EPAwr5NirAjOspZrsX7UZg9iXTwEGeITgTLi/4AB8XKi7hgDAqJibXchDdJ618brc4Hg/HzVyCy9CbXrAkSTD26PH4Gmq2u68Xga9RDCzT4I1lSfgiXc0Yp8WKbKWFM45kwzYW6nWLEvqXl7Fd+PYXraWD7/wojom9R/B33hO/txFz6r5d0P/A3BOtF15LNIVG9p/UaZ5yg6WQI6mFkLOndYi1o1lxyokAOxNmtucX4kYOaVGcZ/iz+UetAfG/7N+pnZoi7xe5t2EF1K6FRmmxQQhoxtVUY1ZjLIjFb0uVKfaMBzMy/p8z66OBKFDc3enTTiqSduB1A3aFGpf6GGiX/OiFh9PnqZw2KrO24CE7nhXCiRuz0c4QWbD6NNzNnw3BjcEWofVlQDxrrveDAlQIRzfsDFHvz7OvLuHl9WnGSw+TC32pfAX8yE7wm5waBjcta4aV6ccnYbHY/+oypTE4fAcHs/6cUKtC+0eR1LGt/TRPJ9G/zPfyo+z+2D3eMw0=
   file:
-  - "${RELEASE_PKG_FILE}"
-  - "${RELEASE_PKG_MD5_FILE}"
-  - "${RELEASE_PKG_SHA_FILE}"
+  - ${RELEASE_PKG_FILE}
+  - ${RELEASE_PKG_MD5_FILE}
+  - ${RELEASE_PKG_SHA_FILE}
   skip_cleanup: true
-  on:
-    tags: true
   on:
     repo: DSI-Ville-Noumea/commun

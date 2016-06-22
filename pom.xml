@@ -27,6 +27,10 @@
         <!-- Test -->
         <jacoco.version>0.7.7.201606060606</jacoco.version>
         <junit.version>4.12</junit.version>
+
+        <versioneye-maven-plugin.version>3.9.2</versioneye-maven-plugin.version>
+        <versioneye-maven-plugin.apiKey>${env.VERSIONEYE_APIKEY}</versioneye-maven-plugin.apiKey>
+        <versioneye-maven-plugin.projectId>${env.VERSIONEYE_PROJECTID}</versioneye-maven-plugin.projectId>
     </properties>
 
     <build>
@@ -105,6 +109,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.versioneye</groupId>
+                <artifactId>versioneye-maven-plugin</artifactId>
+                <version>${versioneye-maven-plugin.version}</version>
+                <configuration>
+                    <apiKey>${versioneye-maven-plugin.apiKey}</apiKey>
+                    <projectId>${versioneye-maven-plugin.projectId}</projectId>
+                </configuration>
             </plugin>
         </plugins>
     </build>
