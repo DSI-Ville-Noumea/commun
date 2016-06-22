@@ -8,7 +8,9 @@ before_install:
 - export TZ=Pacific/Noumea
 install: mvn clean install checksum:files -Dmaven.javadoc.skip=true -B -V
 notifications:
-  slack: dsi-mairie-noumea:MxlOz1t5uMHw8BYH0qjlv0R1
+  slack:
+    rooms :
+       secure: QuiPmbVTN9Mt6Na/DjMA/3XDoJZ0uf3Cn4nx0xvmHdPDEbHD5/Y76aFKmjuNcFIDER/ng2CsvClYbZcDQy2DxEzBFs+FR4ZJ8Rvn8MNOBmLXifOq42vPNv1x3KuRWTDpOVcY+AHwZI+YXLO/4Cwgz3qTo+q2bj46/s2FcG1LJTCRarXWR8fi0TKeD1Twi8d/tMJOBrHCynqVsxy9DvQ2nWDaYYrFxp4bvyLf+2S3IK94K5wHDx8Su6zvF7rTHQ9USn3GFUc66hrLPgGSC9h1JdEZjWyya4edohr1rmg6r7MLJOQjNSLFgaA/QVWuGWMUB1biX0IFq17Qyhdf65cEtut6+Mbm+9LJCIwmjI3lDoJdsSqMWuyFFxyvyeOagnYvjCp78OfPW/qvck8Su1AaXqFjMmFTS95N1d9z2YLtL4xkZ9KEPpLaf3v4g38gjccp5ZIhphgSErPXY8WQ3AvKU0zp5pG3FsVKHqhZB1WnPEbqkenlnk6tebmJKYb8qa8AGz26wbcJDRkdL18ORf7wjeloIe0L9Df876Z3QAjTzdHyj6dVSFqP9U2snmN1dgBfAzIG55AzhbyKRj0LS9BQuyfiNZGXP5h9B4V+aBKWmtrot+/nz2UcKB+JazUs8tdU05zBhohN+eMQEsgTg5KwKtj4ujJ9uWWl+tk5W27RBRQ=
 before_deploy:
 - export RELEASE_PKG_FILE=$(ls target/*.jar)
 - export RELEASE_PKG_MD5_FILE=$(ls target/*.jar.md5)
