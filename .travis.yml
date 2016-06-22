@@ -33,4 +33,5 @@ deploy:
   - ${RELEASE_PKG_SHA_FILE}
   skip_cleanup: true
   on:
+    tags: true
     repo: DSI-Ville-Noumea/commun
