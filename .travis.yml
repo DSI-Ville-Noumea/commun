@@ -35,7 +35,3 @@ deploy:
   on:
     tags: true
     repo: DSI-Ville-Noumea/commun
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
